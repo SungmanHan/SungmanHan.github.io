@@ -199,58 +199,58 @@
                 $("#num5").text(5);    
                 $("#num6").text(6);    
 
-                numGet1 = null;
-                numGet2 = null;
-                numGet3 = null;
-                numGet4 = null;
-                numGet5 = null;
-                numGet6 = null;
+                numGet1 = onGetRottoNum();
+                numGet2 = onGetRottoNum();
+                numGet3 = onGetRottoNum();
+                numGet4 = onGetRottoNum();
+                numGet5 = onGetRottoNum();
+                numGet6 = onGetRottoNum();
                 
                 if (num1 == null) {
                     num1 = setInterval(function () {
-                        if (numArr.indexOf(onGetRottoNum()) == -1) {
+                        $("#num1").text(numGet1);  
+                        if (numArr.indexOf(numGet1) == -1) {
                             numGet1 = onGetRottoNum();     
-                            $("#num1").text(numGet1);  
                         }  
                     }, onGetTime());
                 }
                 if (num2 == null) {
                     num2 = setInterval(function () {
-                        if (numArr.indexOf(onGetRottoNum()) == -1) {
+                        $("#num2").text(numGet2);    
+                        if (numArr.indexOf(numGet2) == -1) {
                             numGet2 = onGetRottoNum();
-                            $("#num2").text(numGet2);    
                         }
                     }, onGetTime());
                 }
                 if (num3 == null) {
                     num3 = setInterval(function () {
-                        if (numArr.indexOf(onGetRottoNum()) == -1) {
+                        $("#num3").text(numGet3);    
+                        if (numArr.indexOf(numGet3) == -1) {
                             numGet3 = onGetRottoNum()
-                            $("#num3").text(numGet3);    
                         }
                     }, onGetTime());
                 }
                 if (num4 == null) {
                     num4 = setInterval(function () {
-                        if (numArr.indexOf(onGetRottoNum()) == -1) {
+                        $("#num4").text(numGet4);  
+                        if (numArr.indexOf(numGet4) == -1) {
                             numGet4 = onGetRottoNum();
-                            $("#num4").text(numGet4);  
                         }  
                     }, onGetTime());
                 }
                 if (num5 == null) {
                     num5 = setInterval(function () {
-                        if (numArr.indexOf(onGetRottoNum()) == -1) {
+                        $("#num5").text(numGet5);   
+                        if (numArr.indexOf(numGet5) == -1) {
                             numGet5 = onGetRottoNum();
-                            $("#num5").text(numGet5);   
                         } 
                     }, onGetTime());
                 }
                 if (num6 == null) {
                     num6 = setInterval(function () {
-                        if (numArr.indexOf(onGetRottoNum()) == -1) {
+                        $("#num6").text(numGet6);  
+                        if (numArr.indexOf(numGet6) == -1) {
                             numGet6 = onGetRottoNum();
-                            $("#num6").text(numGet6);  
                         }  
                     }, onGetTime());
                 }
@@ -258,7 +258,8 @@
 
             function onStopNumber() {
 
-                while (true) {
+                while (num1 != null) {
+                    console.log(numGet1)
                     if (num1 != null && numArr.indexOf(numGet1) == -1 ) {
                         numArr.push(numGet1);
                         clearInterval(num1);
@@ -268,7 +269,8 @@
                         continue;
                     }
                 }
-                while (true) {
+                while (num2 != null) {
+                    console.log(numGet2)
                     if (num2 != null && numArr.indexOf(numGet2) == -1 ) {
                         numArr.push(numGet2);
                         clearInterval(num2);
@@ -278,7 +280,8 @@
                         continue;
                     }
                 }
-                while (true) {
+                while (num3 != null) {
+                    console.log(numGet3)
                     if (num3 != null && numArr.indexOf(numGet3) == -1 ) {
                         numArr.push(numGet3);
                         clearInterval(num3);
@@ -288,7 +291,8 @@
                         continue;
                     }
                 }
-                while (true) {
+                while (num4 != null) {
+                    console.log(numGet4)
                     if (num4 != null && numArr.indexOf(numGet4) == -1) {
                         numArr.push(numGet4);
                         clearInterval(num4);
@@ -298,7 +302,8 @@
                         continue;
                     }
                 }
-                while (true) {
+                while (num5 != null) {
+                    console.log(numGet5)
                     if (num5 != null && numArr.indexOf(numGet5) == -1) {
                         numArr.push(numGet5);
                         clearInterval(num5);
@@ -308,7 +313,8 @@
                         continue;
                     }
                 }
-                while (true) {
+                while (num6 != null) {
+                    console.log(numGet6)
                     if (num6 != null&& numArr.indexOf(numGet6) == -1) {
                         numArr.push(numGet6);
                         clearInterval(num6);
