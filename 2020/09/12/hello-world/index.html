@@ -142,7 +142,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/09/12/hello-world/" data-id="ckf13n41o0000xzrodu90hd62" class="article-share-link">
+      <a data-url="http://example.com/2020/09/12/hello-world/" data-id="ckf14utg60000jvroaa2ka599" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -224,139 +224,108 @@
             function onCreateNumber() {
                 numArr = [];
 
-                $("#num1").text(1);    
-                $("#num2").text(2);    
-                $("#num3").text(3);    
-                $("#num4").text(4);    
-                $("#num5").text(5);    
-                $("#num6").text(6);    
+                $("#num1").text('-');    
+                $("#num2").text('-');    
+                $("#num3").text('-');    
+                $("#num4").text('-');    
+                $("#num5").text('-');    
+                $("#num6").text('-');    
 
-                numGet1 = onGetRottoNum();
-                numGet2 = onGetRottoNum();
-                numGet3 = onGetRottoNum();
-                numGet4 = onGetRottoNum();
-                numGet5 = onGetRottoNum();
-                numGet6 = onGetRottoNum();
+                numGet1 = null;
+                numGet2 = null;
+                numGet3 = null;
+                numGet4 = null;
+                numGet5 = null;
+                numGet6 = null;
                 
                 if (num1 == null) {
                     num1 = setInterval(function () {
-                        $("#num1").text(numGet1);  
-                        if (numArr.indexOf(numGet1) == -1) {
-                            numGet1 = onGetRottoNum();     
-                        }  
+                        numGet1 = onGetRottoNum();     
+                        $("#num1").text(numGet1);
                     }, onGetTime());
                 }
                 if (num2 == null) {
                     num2 = setInterval(function () {
+                        numGet2 = onGetRottoNum();
                         $("#num2").text(numGet2);    
-                        if (numArr.indexOf(numGet2) == -1) {
-                            numGet2 = onGetRottoNum();
-                        }
                     }, onGetTime());
                 }
                 if (num3 == null) {
                     num3 = setInterval(function () {
+                        numGet3 = onGetRottoNum();
                         $("#num3").text(numGet3);    
-                        if (numArr.indexOf(numGet3) == -1) {
-                            numGet3 = onGetRottoNum()
-                        }
                     }, onGetTime());
                 }
                 if (num4 == null) {
                     num4 = setInterval(function () {
+                        numGet4 = onGetRottoNum();
                         $("#num4").text(numGet4);  
-                        if (numArr.indexOf(numGet4) == -1) {
-                            numGet4 = onGetRottoNum();
-                        }  
                     }, onGetTime());
                 }
                 if (num5 == null) {
                     num5 = setInterval(function () {
+                        numGet5 = onGetRottoNum();
                         $("#num5").text(numGet5);   
-                        if (numArr.indexOf(numGet5) == -1) {
-                            numGet5 = onGetRottoNum();
-                        } 
                     }, onGetTime());
                 }
                 if (num6 == null) {
                     num6 = setInterval(function () {
+                        numGet6 = onGetRottoNum();
                         $("#num6").text(numGet6);  
-                        if (numArr.indexOf(numGet6) == -1) {
-                            numGet6 = onGetRottoNum();
-                        }  
                     }, onGetTime());
                 }
             }
 
             function onStopNumber() {
-
-                while (num1 != null) {
-                    console.log(numGet1)
-                    if (num1 != null && numArr.indexOf(numGet1) == -1 ) {
+                while (numArr.indexOf(numGet1) == -1) {
+                    if (num1 != null) {
                         numArr.push(numGet1);
                         clearInterval(num1);
                         num1 = null;
                         break;
-                    }else{
-                        continue;
                     }
                 }
-                while (num2 != null) {
-                    console.log(numGet2)
-                    if (num2 != null && numArr.indexOf(numGet2) == -1 ) {
+                while (numArr.indexOf(numGet2) == -1) {
+                    if (num2 != null) {
                         numArr.push(numGet2);
                         clearInterval(num2);
                         num2 = null;
                         break;
-                    }else{
-                        continue;
                     }
                 }
-                while (num3 != null) {
-                    console.log(numGet3)
-                    if (num3 != null && numArr.indexOf(numGet3) == -1 ) {
+                while (numArr.indexOf(numGet3) == -1) {
+                    if (num3 != null) {
                         numArr.push(numGet3);
                         clearInterval(num3);
                         num3 = null;
                         break;
-                    }else{
-                        continue;
                     }
                 }
-                while (num4 != null) {
-                    console.log(numGet4)
-                    if (num4 != null && numArr.indexOf(numGet4) == -1) {
+                while (numArr.indexOf(numGet4) == -1) {
+                    if (num4 != null) {
                         numArr.push(numGet4);
                         clearInterval(num4);
                         num4 = null;
                         break;
-                    }else{
-                        continue;
                     }
                 }
-                while (num5 != null) {
-                    console.log(numGet5)
-                    if (num5 != null && numArr.indexOf(numGet5) == -1) {
+                while (numArr.indexOf(numGet5) == -1 ) {
+                    if (num5 != null) {
                         numArr.push(numGet5);
                         clearInterval(num5);
                         num5 = null;
                         break;
-                    }else{
-                        continue;
                     }
                 }
-                while (num6 != null) {
-                    console.log(numGet6)
-                    if (num6 != null&& numArr.indexOf(numGet6) == -1) {
+                while (numArr.indexOf(numGet6) == -1) {
+                    if (num6 != null) {
                         numArr.push(numGet6);
                         clearInterval(num6);
                         num6 = null;
                         break;
-                    }else{
-                        continue;
                     }
                 }
-                alert(numArr.join(','))
+               // alert(numArr.join(','))
                 
             }
 
