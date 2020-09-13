@@ -29,6 +29,7 @@
 
   
 
+  
 <meta name="generator" content="Hexo 5.1.1"></head>
 
 <body>
@@ -172,21 +173,193 @@
     <div class="row">
     <div class="col-sm-12" id="coupangDivB">        
         <script>
+            var num1,num2,num3,num4,num5,num6;
+            var numArr = new Array();
             new PartnersCoupang.G({"id":180003,"subId":null});
             $(function(){
                 $("#coupangDivB iframe").css("width","100%");
             })
+
+            function onGetRottoNum() {
+                return Math.floor( Math.random() * 45 ) +1;
+            }
+
+            function onGetTime() {
+                return Math.floor( Math.random() * 1000 ) +100;
+            }
+
+            function onCreateNumber() {
+                numArr = [];
+
+                $("#num1").text(1);    
+                $("#num2").text(2);    
+                $("#num3").text(3);    
+                $("#num4").text(4);    
+                $("#num5").text(5);    
+                $("#num6").text(6);    
+
+
+                num1 = setInterval(function () {
+                    $("#num1").text(onGetRottoNum());    
+                }, onGetTime());
+                num2 = setInterval(function () {
+                    $("#num2").text(onGetRottoNum());    
+                }, onGetTime());
+                num3 = setInterval(function () {
+                    $("#num3").text(onGetRottoNum());    
+                }, onGetTime());
+                num4 = setInterval(function () {
+                    $("#num4").text(onGetRottoNum());    
+                }, onGetTime());
+                num5 = setInterval(function () {
+                    $("#num5").text(onGetRottoNum());    
+                }, onGetTime());
+                num6 = setInterval(function () {
+                    $("#num6").text(onGetRottoNum());    
+                }, onGetTime());
+            }
+
+            function onStopNumber() {
+                var numGet1 = null;
+                var numGet2 = null;
+                var numGet3 = null;
+                var numGet4 = null;
+                var numGet5 = null;
+                var numGet6 = null;
+
+                while (true) {
+                    if (num1 != null&& numArr.indexOf(numGet1) == -1) {
+                        numGet1 = $("#num1").text();
+                    }
+                    if (numGet1 != null  ) {
+                        numArr.push(numGet1);
+                        clearInterval(num1);
+                        num1 = null;
+                        numGet1 = null;
+                        break;
+                    }else{
+                        continue;
+                    }
+                }
+                while (true) {
+                    if (num2 != null && numArr.indexOf(numGet2) == -1 ) {
+                        numGet2 = $("#num2").text();
+                    }
+                    if (numGet2 != null ) {
+                        numArr.push(numGet2);
+                        clearInterval(num2);
+                        num2 = null;
+                        numGet2 = null;
+                        break;
+                    }else{
+                        continue;
+                    }
+                }
+                while (true) {
+                    if (num3 != null && numArr.indexOf($("#num3").text()) == -1  ) {
+                        numGet3 = $("#num3").text();
+                    }
+                    if (numGet3 != null ) {
+                        numArr.push(numGet3);
+                        clearInterval(num3);
+                        num3 = null;
+                        numGet3 = null;
+                        break;
+                    }else{
+                        continue;
+                    }
+                }
+                while (true) {
+                    if (num4 != null&& numArr.indexOf($("#num4").text()) == -1 ) {
+                        numGet4 = $("#num4").text();
+                    }
+                    if (numGet4 != null ) {
+                        numArr.push(numGet4);
+                        clearInterval(num4);
+                        num4 = null;
+                        numGet4 = null;
+                        break;
+                    }else{
+                        continue;
+                    }
+                }
+                while (true) {
+                    if (num5 != null && numArr.indexOf($("#num5").text()) == -1 ) {
+                        numGet5 = $("#num5").text();
+                    }
+                    if (numGet5 != null ) {
+                        numArr.push(numGet5);
+                        clearInterval(num5);
+                        num5 = null;
+                        numGet5 = null;
+                        break;
+                    }else{
+                        continue;
+                    }
+                }
+                while (true) {
+                    if (num6 != null && numArr.indexOf($("#num6").text()) == -1) {
+                        numGet6 = $("#num6").text();
+                    }
+                    if (numGet6 != null) {
+                        numArr.push(numGet6);
+                        clearInterval(num6);
+                        num6 = null;
+                        numGet6 = null;
+                        break;
+                    }else{
+                        continue;
+                    }
+                }
+                alert(numArr.join(','))
+                
+            }
+
         </script>
     </div>
-
-    <div class="col-sm-12">      
-        <div class="border border-primary col-sm-2">1</div>
-        <div class="border border-secondary col-sm-2">2</div>
-        <div class="border border-success col-sm-2">3</div>
-        <div class="border border-danger col-sm-2">4</div>
-        <div class="border border-warning col-sm-2">5</div>
-        <div class="border border-info col-sm-2">6</div>
-    </div>
+</div>
+<div class="row" style="text-align: center;">
+    <table class="table">
+        <thead text>
+          <tr>
+            <th>
+                <H2 style="text-align: center;">로또번호생성하기</H2>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+                <div class="btn-group btn-group-justified" role="group" >
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" id="num1">1</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" id="num2">2</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" id="num3">3</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" id="num4">4</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" id="num5">5</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" id="num6">6</button>
+                    </div>
+                </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <div class="col-sm-6" onclick="onCreateNumber()">번호생성시작</div>
+                <div class="col-sm-6" onclick="onStopNumber()">번호생성중지</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 </div>
 
   </div>
