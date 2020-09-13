@@ -151,7 +151,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/09/12/hello-world/" data-id="ckf16udcr0000ziro14m9cs0n" class="article-share-link">
+      <a data-url="http://example.com/2020/09/12/hello-world/" data-id="ckf17bc9i00005iro2kixcin4" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -253,12 +253,14 @@
                     num1 = setInterval(function () {
                         numGet1 = onGetRottoNum();     
                         $("#num1").text(numGet1);
+                        flag = true;
                     }, onGetTime());
                 }
                 if (num2 == null) {
                     num2 = setInterval(function () {
                         numGet2 = onGetRottoNum();
                         $("#num2").text(numGet2);    
+                        flag = true;
                     }, onGetTime());
                 }
                 if (num3 == null) {
@@ -271,18 +273,21 @@
                     num4 = setInterval(function () {
                         numGet4 = onGetRottoNum();
                         $("#num4").text(numGet4);  
+                        flag = true;
                     }, onGetTime());
                 }
                 if (num5 == null) {
                     num5 = setInterval(function () {
                         numGet5 = onGetRottoNum();
                         $("#num5").text(numGet5);   
+                        flag = true;
                     }, onGetTime());
                 }
                 if (num6 == null) {
                     num6 = setInterval(function () {
                         numGet6 = onGetRottoNum();
                         $("#num6").text(numGet6);  
+                        flag = true;
                     }, onGetTime());
                 }
             }
