@@ -142,7 +142,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/09/12/hello-world/" data-id="ckf14utg60000jvroaa2ka599" class="article-share-link">
+      <a data-url="http://example.com/2020/09/12/hello-world/" data-id="ckf155lye0000shro8czpanxm" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -368,8 +368,14 @@
           </tr>
           <tr>
             <td>
-                <div class="col-sm-6" onclick="onCreateNumber()">번호생성시작</div>
-                <div class="col-sm-6" onclick="onStopNumber()">번호생성중지</div>
+                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                    <div class="btn-group"  role="group">
+                      <button type="button"  onclick="onCreateNumber()" class="btn btn-primary">번호생성시작</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                      <button type="button" onclick="onStopNumber()" class="btn btn-default">번호생성중지</button>
+                    </div>
+                  </div>
             </td>
           </tr>
         </tbody>
