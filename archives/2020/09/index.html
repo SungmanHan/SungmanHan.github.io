@@ -176,6 +176,7 @@
             var num1,num2,num3,num4,num5,num6;
             var numGet1,numGet2,numGet3,numGet4,numGet5,numGet6;
             var numArr = new Array();
+            var flag = false;
             new PartnersCoupang.G({"id":180003,"subId":null});
             $(function(){
                 $("#coupangDivB iframe").css("width","100%");
@@ -191,7 +192,7 @@
 
             function onCreateNumber() {
                 numArr = [];
-
+                flag = true;
                 $("#num1").text('-');    
                 $("#num2").text('-');    
                 $("#num3").text('-');    
@@ -245,56 +246,57 @@
             }
 
             function onStopNumber() {
-                while (numArr.indexOf(numGet1) == -1) {
-                    if (num1 != null) {
-                        numArr.push(numGet1);
-                        clearInterval(num1);
-                        num1 = null;
-                        break;
+                if (flag) {
+                    while (numArr.indexOf(numGet1) == -1) {
+                        if (num1 != null) {
+                            numArr.push(numGet1);
+                            clearInterval(num1);
+                            num1 = null;
+                            break;
+                        }
                     }
-                }
-                while (numArr.indexOf(numGet2) == -1) {
-                    if (num2 != null) {
-                        numArr.push(numGet2);
-                        clearInterval(num2);
-                        num2 = null;
-                        break;
+                    while (numArr.indexOf(numGet2) == -1) {
+                        if (num2 != null) {
+                            numArr.push(numGet2);
+                            clearInterval(num2);
+                            num2 = null;
+                            break;
+                        }
                     }
-                }
-                while (numArr.indexOf(numGet3) == -1) {
-                    if (num3 != null) {
-                        numArr.push(numGet3);
-                        clearInterval(num3);
-                        num3 = null;
-                        break;
+                    while (numArr.indexOf(numGet3) == -1) {
+                        if (num3 != null) {
+                            numArr.push(numGet3);
+                            clearInterval(num3);
+                            num3 = null;
+                            break;
+                        }
                     }
-                }
-                while (numArr.indexOf(numGet4) == -1) {
-                    if (num4 != null) {
-                        numArr.push(numGet4);
-                        clearInterval(num4);
-                        num4 = null;
-                        break;
+                    while (numArr.indexOf(numGet4) == -1) {
+                        if (num4 != null) {
+                            numArr.push(numGet4);
+                            clearInterval(num4);
+                            num4 = null;
+                            break;
+                        }
                     }
-                }
-                while (numArr.indexOf(numGet5) == -1 ) {
-                    if (num5 != null) {
-                        numArr.push(numGet5);
-                        clearInterval(num5);
-                        num5 = null;
-                        break;
+                    while (numArr.indexOf(numGet5) == -1 ) {
+                        if (num5 != null) {
+                            numArr.push(numGet5);
+                            clearInterval(num5);
+                            num5 = null;
+                            break;
+                        }
                     }
-                }
-                while (numArr.indexOf(numGet6) == -1) {
-                    if (num6 != null) {
-                        numArr.push(numGet6);
-                        clearInterval(num6);
-                        num6 = null;
-                        break;
+                    while (numArr.indexOf(numGet6) == -1) {
+                        if (num6 != null) {
+                            numArr.push(numGet6);
+                            clearInterval(num6);
+                            num6 = null;
+                            break;
+                        }
                     }
+                    flag = false;
                 }
-               // alert(numArr.join(','))
-                
             }
 
         </script>
